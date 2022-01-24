@@ -1,0 +1,26 @@
+<costumes anm2root="gfx/characters/">
+	<costume anm2path="costume_001_isaac_body.anm2" type="none" />
+	<costume anm2path="costume_001b_isaac_body.anm2" type="none" />
+	<costume anm2path="costume_002_magdalene_body.anm2" type="none" />
+	<costume anm2path="costume_002b_magdalene_body.anm2" type="none" />
+	<costume anm2path="costume_003_cain_body.anm2" type="none" />
+	<!-- <costume anm2path="costume_003b_cain_body.anm2" type="none" />
+	<costume anm2path="costume_004_judas_body.anm2" type="none" />
+	<costume anm2path="costume_004b_judas_body.anm2" type="none" /> -->
+	<costume anm2path="costume_005_eve_body.anm2" type="none" />
+	<costume anm2path="costume_005b_eve_body.anm2" type="none" />
+	<costume anm2path="costume_006_bluebaby_body.anm2" type="none" />
+	<!-- <costume anm2path="costume_006b_bluebaby_body.anm2" type="none" /> -->
+	<costume anm2path="costume_007_samson_body.anm2" type="none" />
+	
+	<!-- Wardrobe Functionality Costumes -->
+	<costume anm2path="costume_001w_cocksleeve.anm2" type="none" />
+	<costume anm2path="costume_002w_protection.anm2" type="none" />
+	<costume anm2path="costume_003w_xtrahard.anm2" type="none" />
+	<costume anm2path="costume_004w_facial.anm2" type="none" />
+	<costume anm2path="costume_005w_fat_schlonger.anm2" type="none" />
+	<costume anm2path="costume_006w_fat_booba.anm2" type="none" />
+	<costume anm2path="costume_007w_ela_set.anm2" type="none" />
+	<costume anm2path="costume_008w_ela_hair.anm2" type="none" />
+	<costume anm2path="costume_009w_jenny_hair.anm2" type="none" />
+</costumes>

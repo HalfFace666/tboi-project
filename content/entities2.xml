@@ -1,0 +1,14 @@
+<entities anm2root="gfx/screwable/" version="5">
+	<entity anm2path="fb_testing.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" shutdoors="false" collisionMass="9999" collisionRadius="10" friction="0" id="979" name="Fuckable Test" numGridCollisionPoints="0" shadowSize="16" stageHP="0" variant="0">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
+    </entity>
+	<entity anm2path="brothel_price_indicator.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" shutdoors="false" collisionMass="9999" collisionRadius="0" friction="0" id="980" name="Brothel Price" numGridCollisionPoints="0" shadowSize="0" stageHP="0" variant="0">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
+    </entity>
+	<entity anm2path="sex_bed.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" shutdoors="false" collisionMass="9999" collisionRadius="12" friction="0" id="981" name="Sex Bed" numGridCollisionPoints="0" shadowSize="0" stageHP="0" variant="0">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
+    </entity>
+	<entity anm2path="brothel_room.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" shutdoors="false" collisionMass="9999" collisionRadius="0" friction="0" id="982" name="Brothel BG" numGridCollisionPoints="0" shadowSize="0" stageHP="0" variant="0">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0" />
+    </entity>
+</entities>
