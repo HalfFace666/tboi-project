@@ -1,5 +1,4 @@
-# tboi-project
-1.0.0 test
+# tboi-project																					1.0.0 test
 
 NOTE :: DO NOT BUNDLE THIS IN WITH OTHER WORKSHOP CREATIONS, PLS
 I've tried to make it so the mod doesn't interfere with anything so pack merges wouldn't have to be necessary.
@@ -11,11 +10,11 @@ the Mod Config Menu mod.
 
 
 
-Compatible with Mods :
-	- Old Wardrobe+ mod
-	- MiniMapi mod
-	- Mod Config Menu mod
+Compatible with Mods : </br>
+	- Old Wardrobe+ mod </br>
+	- MiniMapi mod </br>
+	- Mod Config Menu mod </br>
 	
-Currently added features :
-	- Brothels that can spawn from Basement to Depths
-	- Achievement Tracker / Art Book (accessible by pressing C)
+Currently added features : </br>
+	- Brothels that can spawn from Basement to Depths </br>
+	- Achievement Tracker / Art Book (accessible by pressing C) </br>
