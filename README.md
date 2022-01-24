@@ -1,10 +1,5 @@
 # tboi-project
-██████  ███████  ██████  ███████ ███    ██ ███████ ██████   █████  ████████ ███████     ███    ███  ██████  ██████  
-██   ██ ██      ██       ██      ████   ██ ██      ██   ██ ██   ██    ██    ██          ████  ████ ██    ██ ██   ██ 
-██   ██ █████   ██   ███ █████   ██ ██  ██ █████   ██████  ███████    ██    █████       ██ ████ ██ ██    ██ ██   ██ 
-██   ██ ██      ██    ██ ██      ██  ██ ██ ██      ██   ██ ██   ██    ██    ██          ██  ██  ██ ██    ██ ██   ██ 
-██████  ███████  ██████  ███████ ██   ████ ███████ ██   ██ ██   ██    ██    ███████     ██      ██  ██████  ██████  
-																												1.0.0 test
+1.0.0 test
 
 NOTE :: DO NOT BUNDLE THIS IN WITH OTHER WORKSHOP CREATIONS, PLS
 I've tried to make it so the mod doesn't interfere with anything so pack merges wouldn't have to be necessary.
@@ -14,8 +9,7 @@ own seperate files instead of a giant main.lua clump. Even then, yanno, good luc
 Oh yeah, and most things are changeable by going into the scripts/dgm_config.lua file or by downloading
 the Mod Config Menu mod.
 
-,-----.,-----.,-----.,-----.,-----.,-----.,-----.,-----.,-----.,-----.,-----.,-----.,-----.,-----.,-----.,-----. 
-'-----''-----''-----''-----''-----''-----''-----''-----''-----''-----''-----''-----''-----''-----''-----''-----' 
+
 
 Compatible with Mods :
 	- Old Wardrobe+ mod
