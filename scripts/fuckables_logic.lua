@@ -6,7 +6,7 @@ local numberUIEnabled = false
 
 local fb = nil
 local paidCharacter = false
-local percentuntilfinish = 0
+local pointsuntilfinish = 0
 local inputdisabled = false
 
 --preload UIs and stuff meant specifically for the fuckening
@@ -30,11 +30,17 @@ function DEGENMOD:ToggleInputFX(isenabled)
 	end
 end
 
---todo : localize cachedfbTypeHead or sm bullshit, this is clunky as hell but probably will polish it up after i expand lewd characters to different special rooms
-function DEGENMOD:initCharacterOnFloor()
-	local cachedfbType_Brothel = math.random(0,2)
+--this is clunky as hell but probably will polish it up after i expand lewd characters to different special rooms
+function DEGENMOD:initFloor()
+	fb = nil
+	cachedfbType_Brothel = math.random(0,2)
+	paidCharacter = false
 	cachedfbTypeHead_Brothel = nil
 	cachedfbTypeBody_Brothel = nil
+	sexbarUI:SetFrame("Pre", 0) --todo : remove pre and put in idle frame 0 like everything else
+	numberUI:SetFrame("Idle", 0)
+	hotkeyUI:SetFrame("Idle", 0)
+	pointsuntilfinish = 0
 	
 	if cachedfbType_Brothel == 0 then
 		cachedfbTypeHead_Brothel = CharacterList["IsaacHead"]
@@ -47,9 +53,9 @@ function DEGENMOD:initCharacterOnFloor()
 		cachedfbTypeBody_Brothel = CharacterList["FemaleBody"]
 	end
 	
-	print("Type Brothel: ", cachedfbType_Brothel)
-	print("Head Brothel: ", cachedfbTypeHead_Brothel)
-	print("Body Brothel: ", cachedfbTypeBody_Brothel)
+	--print("Type Brothel: ", cachedfbType_Brothel)
+	--print("Head Brothel: ", cachedfbTypeHead_Brothel)
+	--print("Body Brothel: ", cachedfbTypeBody_Brothel)
 end
 
 function DEGENMOD:checkforCharactersInRoom()
@@ -106,31 +112,31 @@ function DEGENMOD:onFuckableCharacter(_DEGENMOD)
 				fbSprite:Play("cowgirlanim", true)
 				DEGENMOD:ToggleInputFX(true)
 				if numberUIEnabled == true then
-					numberUI:SetFrame("Idle", 1)
+					numberUI:SetFrame("Idle", 2)
 				end
 			elseif Input.IsButtonTriggered(Keyboard.KEY_2, 0) then
 				fbSprite:Play("frombackanim", true)
 				DEGENMOD:ToggleInputFX(true)
 				if numberUIEnabled == true then
-					numberUI:SetFrame("Idle", 2)
+					numberUI:SetFrame("Idle", 3)
 				end
 			elseif Input.IsButtonTriggered(Keyboard.KEY_3, 0) then
 				fbSprite:Play("blowjobanim", true)
 				DEGENMOD:ToggleInputFX(true)
 				if numberUIEnabled == true then
-					numberUI:SetFrame("Idle", 3)
+					numberUI:SetFrame("Idle", 4)
 				end
 			elseif Input.IsButtonTriggered(Keyboard.KEY_4, 0) then
 				fbSprite:Play("missionaryanim", true)
 				DEGENMOD:ToggleInputFX(true)
 				if numberUIEnabled == true then
-					numberUI:SetFrame("Idle", 4)
+					numberUI:SetFrame("Idle", 5)
 				end
 			end
 			
 			if fbSprite:IsEventTriggered("smackSfx") then
-				percentuntilfinish = percentuntilfinish + 1
-				sexbarUI:SetFrame("Idle", percentuntilfinish)
+				pointsuntilfinish = pointsuntilfinish + 1
+				sexbarUI:SetFrame("Idle", pointsuntilfinish)
 				sound:Play(SoundEffect.SOUND_ANIMAL_SQUISH, 1, 0, false, 1)
 			end
 			
@@ -161,11 +167,11 @@ function DEGENMOD:onFuckableCharacter(_DEGENMOD)
 			sexbarUI:Update()
 		end
 	end
-	if percentuntilfinish >= 81 then
-		percentuntilfinish = 81
+	if pointsuntilfinish >= 81 then
+		pointsuntilfinish = 81
 	end
 end
 
-DEGENMOD:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, DEGENMOD.initCharacterOnFloor)
+DEGENMOD:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, DEGENMOD.initFloor)
 DEGENMOD:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, DEGENMOD.checkforCharactersInRoom)
 DEGENMOD:AddCallback(ModCallbacks.MC_POST_RENDER, DEGENMOD.onFuckableCharacter)
