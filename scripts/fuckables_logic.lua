@@ -47,9 +47,9 @@ function DEGENMOD:initCharacterOnFloor()
 		cachedfbTypeBody_Brothel = CharacterList["FemaleBody"]
 	end
 	
-	--print("Type Brothel: ", cachedfbType_Brothel)
-	--print("Head Brothel: ", cachedfbTypeHead_Brothel)
-	--print("Body Brothel: ", cachedfbTypeBody_Brothel)
+	print("Type Brothel: ", cachedfbType_Brothel)
+	print("Head Brothel: ", cachedfbTypeHead_Brothel)
+	print("Body Brothel: ", cachedfbTypeBody_Brothel)
 end
 
 function DEGENMOD:checkforCharactersInRoom()
@@ -113,6 +113,18 @@ function DEGENMOD:onFuckableCharacter(_DEGENMOD)
 				DEGENMOD:ToggleInputFX(true)
 				if numberUIEnabled == true then
 					numberUI:SetFrame("Idle", 2)
+				end
+			elseif Input.IsButtonTriggered(Keyboard.KEY_3, 0) then
+				fbSprite:Play("blowjobanim", true)
+				DEGENMOD:ToggleInputFX(true)
+				if numberUIEnabled == true then
+					numberUI:SetFrame("Idle", 3)
+				end
+			elseif Input.IsButtonTriggered(Keyboard.KEY_4, 0) then
+				fbSprite:Play("missionaryanim", true)
+				DEGENMOD:ToggleInputFX(true)
+				if numberUIEnabled == true then
+					numberUI:SetFrame("Idle", 4)
 				end
 			end
 			
