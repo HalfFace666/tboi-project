@@ -31,7 +31,7 @@ function DEGENMOD:ToggleInputFX(isenabled)
 end
 
 --todo : localize cachedfbTypeHead or sm bullshit, this is clunky as hell but probably will polish it up after i expand lewd characters to different special rooms
-function DEGENMOD:initCharacterOnFloor()
+function DEGENMOD:initStatsOnFloor()
 	local cachedfbType_Brothel = math.random(0,2)
 	cachedfbTypeHead_Brothel = nil
 	cachedfbTypeBody_Brothel = nil
@@ -114,18 +114,6 @@ function DEGENMOD:onFuckableCharacter(_DEGENMOD)
 				if numberUIEnabled == true then
 					numberUI:SetFrame("Idle", 2)
 				end
-			elseif Input.IsButtonTriggered(Keyboard.KEY_3, 0) then
-				fbSprite:Play("blowjobanim", true)
-				DEGENMOD:ToggleInputFX(true)
-				if numberUIEnabled == true then
-					numberUI:SetFrame("Idle", 3)
-				end
-			elseif Input.IsButtonTriggered(Keyboard.KEY_4, 0) then
-				fbSprite:Play("missionaryanim", true)
-				DEGENMOD:ToggleInputFX(true)
-				if numberUIEnabled == true then
-					numberUI:SetFrame("Idle", 4)
-				end
 			end
 			
 			if fbSprite:IsEventTriggered("smackSfx") then
@@ -166,6 +154,6 @@ function DEGENMOD:onFuckableCharacter(_DEGENMOD)
 	end
 end
 
-DEGENMOD:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, DEGENMOD.initCharacterOnFloor)
+DEGENMOD:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, DEGENMOD.initStatsOnFloor)
 DEGENMOD:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, DEGENMOD.checkforCharactersInRoom)
 DEGENMOD:AddCallback(ModCallbacks.MC_POST_RENDER, DEGENMOD.onFuckableCharacter)
