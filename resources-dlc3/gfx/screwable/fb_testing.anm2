@@ -1,8 +1,8 @@
 <AnimatedActor>
-	<Info CreatedBy="waagabbbaoooouuug" CreatedOn="1/24/2022 23:02:57" Version="83" Fps="30"/>
+	<Info CreatedBy="waagabbbaoooouuug" CreatedOn="1/25/2022 20:09:24" Version="84" Fps="30"/>
 	<Content>
 		<Spritesheets>
-			<Spritesheet Path="fb_femlaz_head.png" Id="0"/>
+			<Spritesheet Path="fb_femlaz_head_part.png" Id="0"/>
 			<Spritesheet Path="fb_female_torso_sprites.png" Id="1"/>
 			<Spritesheet Path="fb_isaac_head_part.png" Id="2"/>
 			<Spritesheet Path="fb_male_torso_sprites.png" Id="3"/>

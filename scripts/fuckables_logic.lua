@@ -30,12 +30,35 @@ function DEGENMOD:ToggleInputFX(isenabled)
 	end
 end
 
+--todo : localize cachedfbTypeHead or sm bullshit, this is clunky as hell but probably will polish it up after i expand lewd characters to different special rooms
+function DEGENMOD:initCharacterOnFloor()
+	local cachedfbType_Brothel = math.random(0,2)
+	cachedfbTypeHead_Brothel = nil
+	cachedfbTypeBody_Brothel = nil
+	
+	if cachedfbType_Brothel == 0 then
+		cachedfbTypeHead_Brothel = CharacterList["IsaacHead"]
+		cachedfbTypeBody_Brothel = CharacterList["FemaleBody"]
+	elseif cachedfbType_Brothel == 1 then
+		cachedfbTypeHead_Brothel = CharacterList["EveHead"]
+		cachedfbTypeBody_Brothel = CharacterList["FemaleBody"]
+	elseif cachedfbType_Brothel == 2 then
+		cachedfbTypeHead_Brothel = CharacterList["FemLazHead"]
+		cachedfbTypeBody_Brothel = CharacterList["FemaleBody"]
+	end
+	
+	print("Type Brothel: ", cachedfbType_Brothel)
+	print("Head Brothel: ", cachedfbTypeHead_Brothel)
+	print("Body Brothel: ", cachedfbTypeBody_Brothel)
+end
+
 function DEGENMOD:checkforCharactersInRoom()
-	--why the fuck is replacespritesheet layerbased and not actually spritesheet based?? what the fuck
 	for i,fuckableCharacter in pairs(Isaac.GetRoomEntities()) do
 		if fuckableCharacter.Type == 979 then
 			fb = fuckableCharacter
 			fbSprite = fb:GetSprite()
+			fbSprite:ReplaceSpritesheet(1, cachedfbTypeHead_Brothel)
+			--fbSprite:ReplaceSpritesheet(0, cachedfbTypeBody_Brothel)
 			fbSprite:LoadGraphics()
 			fbSprite:Play("idle", true)
 		end
@@ -54,7 +77,7 @@ end
 
 function DEGENMOD:onFuckableCharacter(_DEGENMOD)
 	if fb then
-		--game does not like when these are outside cached on the first line so here they stay... wish they didnt tho cause it checks for it on every frame then.
+		--game does not like when these are outside cached on the first line so here they stay... will fix later
 		local player = Isaac.GetPlayer(0)
 		local cachedPlayerCoins = player:GetNumCoins()
 		
@@ -77,28 +100,28 @@ function DEGENMOD:onFuckableCharacter(_DEGENMOD)
 		--icky yunky if elseif if if if else leseif ififikfsfil fififslf
 		if paidCharacter == true then
 			if Input.IsButtonTriggered(Keyboard.KEY_Y, 0) then
-				fbSprite:Play("idle", true)
+				fbSprite:Play("idlealt", true)
 				DEGENMOD:ToggleInputFX(false)
 			elseif Input.IsButtonTriggered(Keyboard.KEY_1, 0) then
-				fbSprite:Play("cowgirl", true)
+				fbSprite:Play("cowgirlanim", true)
 				DEGENMOD:ToggleInputFX(true)
 				if numberUIEnabled == true then
 					numberUI:SetFrame("Idle", 1)
 				end
 			elseif Input.IsButtonTriggered(Keyboard.KEY_2, 0) then
-				fbSprite:Play("fromback", true)
+				fbSprite:Play("frombackanim", true)
 				DEGENMOD:ToggleInputFX(true)
 				if numberUIEnabled == true then
 					numberUI:SetFrame("Idle", 2)
 				end
 			elseif Input.IsButtonTriggered(Keyboard.KEY_3, 0) then
-				fbSprite:Play("succ", true)
+				fbSprite:Play("blowjobanim", true)
 				DEGENMOD:ToggleInputFX(true)
 				if numberUIEnabled == true then
 					numberUI:SetFrame("Idle", 3)
 				end
 			elseif Input.IsButtonTriggered(Keyboard.KEY_4, 0) then
-				fbSprite:Play("missionary", true)
+				fbSprite:Play("missionaryanim", true)
 				DEGENMOD:ToggleInputFX(true)
 				if numberUIEnabled == true then
 					numberUI:SetFrame("Idle", 4)
@@ -132,9 +155,9 @@ function DEGENMOD:onFuckableCharacter(_DEGENMOD)
 			--todo : align in a good spot but i'm lazy so im todoing it
 			hotkeyUI:Render(Vector(Isaac.GetScreenWidth() / 2, Isaac.GetScreenHeight() / 1.20), Vector.Zero, Vector.Zero)
 			hotkeyUI:Update()
-			numberUI:Render(Vector(Isaac.GetScreenWidth() / 2.5, Isaac.GetScreenHeight() / 1.10), Vector.Zero, Vector.Zero)
+			numberUI:Render(Vector(Isaac.GetScreenWidth() / 2.25, Isaac.GetScreenHeight() / 1.10), Vector.Zero, Vector.Zero)
 			numberUI:Update()
-			sexbarUI:Render(Vector(Isaac.GetScreenWidth() / 3.25, Isaac.GetScreenHeight() / 1.10), Vector.Zero, Vector.Zero)
+			sexbarUI:Render(Vector(Isaac.GetScreenWidth() / 3.35, Isaac.GetScreenHeight() / 1.10), Vector.Zero, Vector.Zero)
 			sexbarUI:Update()
 		end
 	end
@@ -143,5 +166,6 @@ function DEGENMOD:onFuckableCharacter(_DEGENMOD)
 	end
 end
 
+DEGENMOD:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, DEGENMOD.initCharacterOnFloor)
 DEGENMOD:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, DEGENMOD.checkforCharactersInRoom)
 DEGENMOD:AddCallback(ModCallbacks.MC_POST_RENDER, DEGENMOD.onFuckableCharacter)
