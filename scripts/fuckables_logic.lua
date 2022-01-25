@@ -31,7 +31,7 @@ function DEGENMOD:ToggleInputFX(isenabled)
 end
 
 --todo : localize cachedfbTypeHead or sm bullshit, this is clunky as hell but probably will polish it up after i expand lewd characters to different special rooms
-function DEGENMOD:initStatsOnFloor()
+function DEGENMOD:initCharacterOnFloor()
 	local cachedfbType_Brothel = math.random(0,2)
 	cachedfbTypeHead_Brothel = nil
 	cachedfbTypeBody_Brothel = nil
@@ -47,9 +47,9 @@ function DEGENMOD:initStatsOnFloor()
 		cachedfbTypeBody_Brothel = CharacterList["FemaleBody"]
 	end
 	
-	print("Type Brothel: ", cachedfbType_Brothel)
-	print("Head Brothel: ", cachedfbTypeHead_Brothel)
-	print("Body Brothel: ", cachedfbTypeBody_Brothel)
+	--print("Type Brothel: ", cachedfbType_Brothel)
+	--print("Head Brothel: ", cachedfbTypeHead_Brothel)
+	--print("Body Brothel: ", cachedfbTypeBody_Brothel)
 end
 
 function DEGENMOD:checkforCharactersInRoom()
@@ -154,6 +154,6 @@ function DEGENMOD:onFuckableCharacter(_DEGENMOD)
 	end
 end
 
-DEGENMOD:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, DEGENMOD.initStatsOnFloor)
+DEGENMOD:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, DEGENMOD.initCharacterOnFloor)
 DEGENMOD:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, DEGENMOD.checkforCharactersInRoom)
 DEGENMOD:AddCallback(ModCallbacks.MC_POST_RENDER, DEGENMOD.onFuckableCharacter)
