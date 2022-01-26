@@ -31,6 +31,7 @@ function DEGENMOD:ToggleInputFX(isenabled)
 end
 
 --this is clunky as hell but probably will polish it up after i expand lewd characters to different special rooms
+
 function DEGENMOD:initFloor()
 	fb = nil
 	cachedfbType_Brothel = math.random(0,2)
