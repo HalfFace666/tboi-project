@@ -11,18 +11,18 @@ local json = require("json")
 
 sound = SFXManager()
 GameState = {}
-CharacterList = {}
 
 
 DEGENMOD:AddCallback(ModCallbacks.MC_POST_RENDER, function()
 	if GameState["Debug"] then
-		local IsDebugHotkeyPressed = false
-		if Input.IsButtonPressed(Keyboard.KEY_O, 0) and IsDebugHotkeyPressed == false then
-			local IsDebugHotkeyPressed = true
-			Isaac.RenderText("O - CLOSE DEBUG", Isaac.GetScreenWidth() / 1.5, Isaac.GetScreenHeight() / 2 + 75, 255, 255, 255, 255)
-		else
-			local IsDebugHotkeyPressed = false
-			Isaac.RenderText("O - DEBUG", Isaac.GetScreenWidth() / 1.5, Isaac.GetScreenHeight() / 2 + 75, 255, 255, 255, 255)
+		local DebugMenu = false
+		if Input.IsButtonPressed(Keyboard.KEY_O, 0) and DebugMenu == false then
+			DebugMenu = true
+			Isaac.RenderText("Brothel RNG: ".. cachedfbType_Brothel, Isaac.GetScreenWidth() / 3, Isaac.GetScreenHeight() / 2 + 55, 255, 255, 255, 255)
+			Isaac.RenderText("Brothel Head Graphics: ".. cachedfbType_Head_Brothel, Isaac.GetScreenWidth() / 3, Isaac.GetScreenHeight() / 2 + 35, 255, 255, 255, 255)
+			Isaac.RenderText("Brothel Body Graphics: ".. cachedfbType_Body_Brothel, Isaac.GetScreenWidth() / 3, Isaac.GetScreenHeight() / 2 + 15, 255, 255, 255, 255)
+		elseif Input.IsButtonPressed(Keyboard.KEY_O, 0) and DebugMenu == true then
+			DebugMenu = false
 		end
 	end
 end)
@@ -31,17 +31,14 @@ end)
 function DEGENMOD:onStart()
 	if DEGENMOD:HasData() then
 		GameState = json.decode(DEGENMOD:LoadData())
-		CharacterList = json.decode(DEGENMOD:LoadData())
 	else
 		GameState = DEGENMOD.ConfigMod
-		CharacterList = DEGENMOD.LewdCharacterAttribTable
 	end
 end
 DEGENMOD:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, DEGENMOD.onStart)
 
 function DEGENMOD:onExit(save)
 	DEGENMOD:SaveData(json.encode(GameState))
-	DEGENMOD:SaveData(json.encode(CharacterList))
 end
 
 DEGENMOD:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, DEGENMOD.onExit)

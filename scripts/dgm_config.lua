@@ -21,9 +21,26 @@ DEGENMOD.ConfigMod = {
 	["Joke Unlock"] = true,
 	
 	--debug features
-	["Debug"] = false,
+	["Debug"] = true,
 	
 	--compatibility and other (disable these if it's conflicting, or not... i'm not your dad)
 	["Enable Achievement Tracker"] = false, --UNFINISHED UNFINISHED UNFINISHED
-	["Enable Body Costumes"] = true
+	["Enable Body Costumes"] = true, --does nothing
+	
+	--::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::DO NOT EDIT ANYTHING BEYOND THIS POINT WITHOUT KNOWING WHAT YOU'RE DOING::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	--note for myself: if this proves to be too tedious or impede probably just try porting the saving & loading to fuckables_logic.lua file as a seperate thing
+	--Character Torsos
+	["MaleTorso"] = "gfx/screwable/fb_male_torso_sprites.png",
+	["FemaleTorso"] = "gfx/screwable/fb_female_torso_sprites.png",
+	
+	--Character Heads
+	["IsaacHead"] = "gfx/screwable/fb_isaac_head_part.png",
+	["EveHead"] = "gfx/screwable/fb_eve_head_part.png",
+	["FemLazHead"] = "gfx/screwable/fb_femlaz_head_part.png",
+	["ShygalHead"] = "gfx/screwable/fb_shygal_head_part.png",
+	
+	--Price Attributes
+	["Price"] = 5,
+	["NewTag"] = false,
+	["SaleTag"] = false
 }

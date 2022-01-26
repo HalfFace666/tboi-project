@@ -30,33 +30,28 @@ function DEGENMOD:ToggleInputFX(isenabled)
 	end
 end
 
---this is clunky as hell but probably will polish it up after i expand lewd characters to different special rooms
-
+--this makes me miserable but is required to generate the lewd characters
 function DEGENMOD:initFloor()
 	fb = nil
 	cachedfbType_Brothel = math.random(0,2)
 	paidCharacter = false
-	cachedfbTypeHead_Brothel = nil
-	cachedfbTypeBody_Brothel = nil
-	sexbarUI:SetFrame("Pre", 0) --todo : remove pre and put in idle frame 0 like everything else
+	cachedfbType_Head_Brothel = nil
+	cachedfbType_Body_Brothel = nil
+	sexbarUI:SetFrame("Pre", 0) --todo : remove pre and put in idle frame 0 like everything else, im too lazy to do it rn lol
 	numberUI:SetFrame("Idle", 0)
 	hotkeyUI:SetFrame("Idle", 0)
 	pointsuntilfinish = 0
 	
 	if cachedfbType_Brothel == 0 then
-		cachedfbTypeHead_Brothel = CharacterList["IsaacHead"]
-		cachedfbTypeBody_Brothel = CharacterList["FemaleBody"]
+		cachedfbType_Head_Brothel = GameState["IsaacHead"]
+		cachedfbType_Body_Brothel = GameState["FemaleTorso"]
 	elseif cachedfbType_Brothel == 1 then
-		cachedfbTypeHead_Brothel = CharacterList["EveHead"]
-		cachedfbTypeBody_Brothel = CharacterList["FemaleBody"]
+		cachedfbType_Head_Brothel = GameState["EveHead"]
+		cachedfbType_Body_Brothel = GameState["FemaleTorso"]
 	elseif cachedfbType_Brothel == 2 then
-		cachedfbTypeHead_Brothel = CharacterList["FemLazHead"]
-		cachedfbTypeBody_Brothel = CharacterList["FemaleBody"]
+		cachedfbType_Head_Brothel = GameState["FemLazHead"]
+		cachedfbType_Body_Brothel = GameState["FemaleTorso"]
 	end
-	
-	--print("Type Brothel: ", cachedfbType_Brothel)
-	--print("Head Brothel: ", cachedfbTypeHead_Brothel)
-	--print("Body Brothel: ", cachedfbTypeBody_Brothel)
 end
 
 function DEGENMOD:checkforCharactersInRoom()
@@ -64,8 +59,8 @@ function DEGENMOD:checkforCharactersInRoom()
 		if fuckableCharacter.Type == 979 then
 			fb = fuckableCharacter
 			fbSprite = fb:GetSprite()
-			fbSprite:ReplaceSpritesheet(1, cachedfbTypeHead_Brothel)
-			--fbSprite:ReplaceSpritesheet(0, cachedfbTypeBody_Brothel)
+			fbSprite:ReplaceSpritesheet(1, cachedfbType_Head_Brothel)
+			fbSprite:ReplaceSpritesheet(0, cachedfbType_Body_Brothel)
 			fbSprite:LoadGraphics()
 			fbSprite:Play("idle", true)
 		end
