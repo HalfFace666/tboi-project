@@ -9,17 +9,9 @@ Currently updates that change the config files might need a quick clean so go to
 
 Download Guide :
 1) Top Right Code button > Download ZIP
+OR ALTERNATIVELY
+1) Right side Releases > Releases > Download Source Code on Latest Release
 2) Extract ZIP into "steamapps\common\The Binding of Isaac Rebirth\mods"
 
 Currently at a very early stage, things are not finished. At all. It barely works and the code is cursed.
 Templates for making character textures (if needed) are located in "\resources-dlc3\gfx\screwable\"
-
-Brothels can be accessed on any floor from Basement to Depths via "goto d.1500" in Console.
-Press number keys for H-Scenes or [T] for hotkeys
-
-Compatible with Mods : </br>
-* Old Wardrobe+ mod (adds in 6 new costumes for now)</br>
-	
-Currently added features : </br>
-* Brothels that can spawn from Basement to Depths, inside brothels are Lewd Characters that take 15 coins</br>
-* T to enable hotkey(s) for H-Scene
