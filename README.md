@@ -9,7 +9,9 @@ Currently updates that change the config files might need a quick clean so go to
 
 Download Guide :
 1) Top Right Code button > Download ZIP
+
 OR ALTERNATIVELY
+
 1) Right side Releases > Releases > Download Source Code on Latest Release
 2) Extract ZIP into "steamapps\common\The Binding of Isaac Rebirth\mods"
 
