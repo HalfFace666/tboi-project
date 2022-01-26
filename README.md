@@ -15,6 +15,7 @@ Currently at a very early stage, things are not finished. At all. It barely work
 Templates for making character textures (if needed) are located in "\resources-dlc3\gfx\screwable\"
 
 Brothels can be accessed on any floor from Basement to Depths via "goto d.1500" in Console.
+Press number keys for H-Scenes or [T] for hotkeys
 
 Compatible with Mods : </br>
 * Old Wardrobe+ mod (adds in 6 new costumes for now)</br>
